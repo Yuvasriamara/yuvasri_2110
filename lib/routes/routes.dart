@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:yuvasri_2110/features/onboarding/view/onboarding1.dart';
+import 'package:yuvasri_2110/features/onboarding/view/onboarding2.dart';
+import 'package:yuvasri_2110/features/onboarding/view/onboarding3.dart';
 import 'routes_constants.dart';
 
 class AppRouter {
@@ -8,14 +10,8 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: RoutesConstants.splashScreen,
+    initialLocation: RoutesConstants.onboarding1,
     routes: <RouteBase>[
-      GoRoute(
-        path: RoutesConstants.splashScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashScreen();
-        },
-      ),
       GoRoute(
         path: RoutesConstants.onboarding1,
         builder: (BuildContext context, GoRouterState state) {
@@ -34,42 +30,13 @@ class AppRouter {
           return const Onboarding3View();
         },
       ),
-      GoRoute(
-        path: RoutesConstants.loginScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const LoginScreen();
-        },
-      ),
-      GoRoute(
-        path: RoutesConstants.signupScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SignupScreen();
-        },
-      ),
-      GoRoute(
-        path: RoutesConstants.homeScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const HomepageView();
-        },
-      ),
-      GoRoute(
-        path: RoutesConstants.restaurantDetailsScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const RestaurantDetailsView();
-        },
-      ),
-      GoRoute(
-        path: RoutesConstants.searchScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SearchScreen();
-        },
-      ),
-      GoRoute(
-        path: RoutesConstants.profileScreen,
-        builder: (BuildContext context, GoRouterState state) {
-          return const ProfileScreen();
-        },
-      ),
+      // Define a route for the login screen
+      //GoRoute(
+        //path: RoutesConstants.login,
+        //builder: (BuildContext context, GoRouterState state) {
+         // return const LoginScreen();  // Define your LoginScreen widget
+        //},
+      //),
     ],
     errorBuilder: (BuildContext context, GoRouterState state) {
       return const Scaffold(
